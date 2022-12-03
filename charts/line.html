@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="bitcoinstyle.css">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title> Bitcoin Ticker</title>
+	<!-- design system files -->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+	<div class="">
+        <canvas id="my-chart"></canvas>
+    </div>
+    <script>;
+        
+        const ctx = document.getElementById("my-chart");
+
+        const data = {
+            labels: [
+                'January', 
+                'February',
+                'March',
+                'April',
+                'May',
+                'June',
+                'July'
+            ],
+            datasets: [{
+                label: 'Pie chart',
+                data: [ 300, 50, 100, 30, 80, 70, 56],
+                backgroundColor: 'rgb(255, 99, 132)'
+            }],
+            hoverOffset: 4
+        }
+
+        new Chart(ctx, {
+            type: 'line',
+            data: data
+        })
+    </script>
+</body>
+
+</html>

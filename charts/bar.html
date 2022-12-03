@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="bitcoinstyle.css">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title> Bitcoin Ticker</title>
+	<!-- design system files -->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+	<div class="">
+        <canvas id="my-chart"></canvas>
+    </div>
+    <script>
+
+        data: {
+            datasets: [{
+                barPercentage: 0.5,
+                barThickness: 6,
+                maxBarThickness: 8,
+                minBarLength: 2,
+                data: [10, 20, 30, 40, 50, 60, 70]
+            }]
+        };
+        
+        const ctx = document.getElementById("my-chart");
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: 'Chỉ số',
+                    data: [ 12, 19, 3, 5, 2, 3],
+                    borderWidth: 1
+                }]
+            },
+            option: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
